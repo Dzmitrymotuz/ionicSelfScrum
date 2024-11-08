@@ -1,0 +1,7 @@
+{
+  "name": "ionicSelfScrum",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
