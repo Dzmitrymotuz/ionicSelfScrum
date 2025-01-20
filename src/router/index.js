@@ -11,6 +11,11 @@ const routes = [
     component: () => import ("../pages/Auth/Login.vue")
   },
   {
+    path: '/register',
+    name: 'Register',
+    component: () => import ("../pages/Auth/Register.vue")
+  },
+  {
     path: '/logout',
     name: 'Logout',
     component: () => import ("../pages/Auth/Logout.vue")
@@ -46,7 +51,7 @@ const router = createRouter({
 })
 router.beforeEach(async(to, from)=> {
   const token = await storage.get('token');
-  if (!token && to.name != 'Login') {
+  if (!token && to.name != 'Login' && to.name !== 'Register') {
     return {name: 'Login'}
   }
   return true;
